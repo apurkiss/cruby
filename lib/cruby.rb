@@ -1,11 +1,18 @@
-require "extension"
-require "cruby/version"
-require "divide"
-require "add"
-require "multiply"
+require 'extension'
+require 'cruby/version'
+require 'base'
+require 'c'
+require 'ruby'
 
 module Cruby
-  DEFAULT_ITERATIONS = 100_000_000
+  DEFAULT_RUBY_ITERATIONS = 100_000_000
+  DEFAULT_C_ITERATIONS = 1_000_000_000
 
-  class Error < StandardError; end
+  def self.c
+    Cruby::C.new
+  end
+
+  def self.ruby
+    Cruby::Ruby.new
+  end
 end

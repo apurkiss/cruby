@@ -1,38 +1,49 @@
 # Cruby
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/cruby`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'cruby'
+To get started:
+ 
+```
+bin/setup
 ```
 
-And then execute:
+Then compile the C code:
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install cruby
+```
+bin/rake compile
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+From a console:
 
-## Development
+```
+$ bin/console
+``` 
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+Call the various C and Ruby methods like this:
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```cassandraql
+irb(main):001:0> c = Cruby::c
+=> #<Cruby::C:0x00007fed710f44c8 @optimized=false>
+irb(main):002:0> ruby = Cruby::ruby
+=> #<Cruby::Ruby:0x00007fed7206f218>
+irb(main):003:0> ruby.add
+Iterations:   100,000,000
+Milliseconds: 3604.469
+=> nil
+irb(main):004:0> c.add
+Iterations:   1,000,000,000
+Milliseconds: 1439.3609999999999
+=> nil
+irb(main):005:0> c.optimize
+=> true
+irb(main):006:0> c.add
+Iterations:   1,000,000,000
+Milliseconds: 0.013
+=> nil
+irb(main):007:0> 
 
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/cruby.
+```
 
 ## License
 
