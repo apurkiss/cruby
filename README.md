@@ -35,7 +35,7 @@ irb(main):002:0> ruby = Cruby::ruby
 => #<Cruby::Ruby:0x00007fed7206f218>
 ```
 This makes subsequent calls shorter and allows you to set the `optimize` flag on c objects. 
-Next call the add method on either object: 
+Next call the `add` method on either object: 
 
 ```cassandraql
 irb(main):003:0> ruby.add
@@ -77,6 +77,23 @@ except that the counter `i` is declared as `volatile`.
 This tells the compiler to assume nothing about `i` and therefore forces the looping. Typically 
 volatile vars are used for global access where interrupts or other threads can change their
 value outside of the code in question. 
+
+Methods are also provided for `multiply` and `divide` that call a simple 
+[multiply](https://github.com/apurkiss/cruby/blob/master/ext/library.c#L48) / [divide](https://github.com/apurkiss/cruby/blob/master/ext/library.c#L24) operation
+in addition to the loop counting in add. Timing is basically the same in C but [Ruby](https://github.com/apurkiss/cruby/blob/master/lib/ruby.rb) 
+takes ~1 second longer to divide:
+
+ ```cassandraql
+irb(main):003:0> ruby.multiply
+Iterations:   100,000,000
+Milliseconds: 3349.1749999999997
+=> nil
+irb(main):004:0> ruby.divide
+Iterations:   100,000,000
+Milliseconds: 4070.7319999999995
+=> nil
+
+```
 
 ## License
 
