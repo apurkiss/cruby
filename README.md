@@ -14,10 +14,15 @@ bin/rake compile
 
 ## Usage
 
-From a console:
 
 ```
 $ bin/console
+``` 
+
+Or to compile and launch the console
+
+```
+$ ./start
 ``` 
 
 Call the various C and Ruby methods like this:
