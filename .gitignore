@@ -6,9 +6,11 @@
 /pkg/
 /spec/reports/
 /tmp/
-/ext/extension.bundle
-/ext/extension.o
-/ext/library.o
+extension.bundle
+extension.o
+library.o
+workspace.xml
+.idea
 
 # rspec failure tracking
 .rspec_status
