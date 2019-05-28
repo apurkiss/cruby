@@ -6,6 +6,9 @@
 /pkg/
 /spec/reports/
 /tmp/
+/ext/extension.bundle
+/ext/extension.o
+/ext/library.o
 
 # rspec failure tracking
 .rspec_status

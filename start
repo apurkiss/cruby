@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "Compiling and loading console..."
+./compile
+./console

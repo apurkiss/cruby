@@ -3,9 +3,9 @@
 #include "library.h"
 
 static VALUE add(VALUE self, VALUE value) {
-    unsigned long long int number_in = NUM2INT(value);
+    unsigned long long int number_in = NUM2DBL(value);
     unsigned long long int number_out = add_from_library(number_in);
-    return INT2NUM(number_out);
+    return DBL2NUM(number_out);
 }
 
 static VALUE add_optimized(VALUE self, VALUE value) {
@@ -15,9 +15,9 @@ static VALUE add_optimized(VALUE self, VALUE value) {
 }
 
 static VALUE divide(VALUE self, VALUE value) {
-    unsigned long long int number_in = NUM2INT(value);
+    unsigned long long int number_in = NUM2DBL(value);
     unsigned long long int number_out = divide_from_library(number_in);
-    return INT2NUM(number_out);
+    return DBL2NUM(number_out);
 }
 
 static VALUE divide_optimized(VALUE self, VALUE value) {
@@ -27,9 +27,9 @@ static VALUE divide_optimized(VALUE self, VALUE value) {
 }
 
 static VALUE multiply(VALUE self, VALUE value) {
-    unsigned long long int number_in = NUM2INT(value);
+    unsigned long long int number_in = NUM2DBL(value);
     unsigned long long int number_out = multiply_from_library(number_in);
-    return INT2NUM(number_out);
+    return DBL2NUM(number_out);
 }
 
 static VALUE multiply_optimized(VALUE self, VALUE value) {
