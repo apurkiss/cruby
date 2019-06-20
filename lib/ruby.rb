@@ -7,19 +7,19 @@ module Cruby
     end
 
     def add(count = DEFAULT_RUBY_ITERATIONS)
-      start(count)
+      start(__method__, count)
       ruby_add(count)
       time
     end
 
     def multiply(count = DEFAULT_RUBY_ITERATIONS)
-      start(count)
+      start(__method__, count)
       ruby_multiply(count)
       time
     end
 
     def divide(count = DEFAULT_RUBY_ITERATIONS)
-      start(count)
+      start(__method__, count)
       ruby_divide(count)
       time
     end
