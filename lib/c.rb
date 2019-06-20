@@ -13,19 +13,19 @@ module Cruby
     end
 
     def add(count = DEFAULT_C_ITERATIONS)
-      start(count)
+      start(__method__, count)
       c_add(count)
       time
     end
 
     def multiply(count = DEFAULT_C_ITERATIONS)
-      start(count)
+      start(__method__, count)
       c_multiply(count)
       time
     end
 
     def divide(count = DEFAULT_C_ITERATIONS)
-      start(count)
+      start(__method__, count)
       c_divide(count)
       time
     end
